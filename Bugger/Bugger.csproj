@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bugger.Models\Bugger.Models.csproj" />
+    <ProjectReference Include="..\Bugger.Services\Bugger.Services.csproj" />
+  </ItemGroup>
+
 </Project>
