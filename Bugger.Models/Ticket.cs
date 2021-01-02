@@ -4,12 +4,14 @@ using System.Text;
 
 namespace Bugger.Models
 {
-    public class Project
+    public class Ticket
     {
-        public int ProjectId { get; set; }
-        public string ProjectName { get; set; }
+        public int TicketId { get; set; }
+        public string TicketTitle { get; set; }
+        public string TicketDescription { get; set; }
+        public Status? Status { get; set; }
         public string CreatedBy { get; set; }
-        public string AssignedToUserId { get; set; }
+        public int AssignedToUserId { get; set; }
         public DateTime Created { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime TargetEndDate { get; set; }

@@ -26,6 +26,7 @@ namespace Bugger
         {
             services.AddRazorPages();
             services.AddSingleton<IUserRepository, MockUserRepository>();
+            services.AddSingleton<IProjectRepository, MockProjectRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
