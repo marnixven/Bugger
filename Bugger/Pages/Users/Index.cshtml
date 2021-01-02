@@ -6,3 +6,32 @@
 <h1>Users</h1>
 
 <h3>@Model.Users.Count()</h3>
+
+@if (Model.Users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var User in Model.Users)
+            {
+                <tr>
+                    <td>@User.Created.ToShortDateString()</td>
+                    <td>@User.UserName</td>
+                    <td>@User.FullName</td>
+                    <td>@User.EmailAddress</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
