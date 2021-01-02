@@ -4,3 +4,18 @@
 }
 
 <h1>Projects</h1>
+
+<div class="card-deck">
+    @foreach (var proj in Model.Projects)
+    {
+        <div class="card border-info mb-3" style="min-width: 18rem; max-width: 30.5%; margin-top: 20px;">
+            <div class="card-header text-center">@proj.ProjectName</div>
+            <div class="card-body">
+                <h5 class="card-title">Ticket status</h5>
+                <h6 class="text-muted">Open: @Model.Projects.Count()</h6>
+                <h6 class="text-muted">In Progress: @Model.Projects.Count()</h6>
+                <h6 class="text-muted">On Hold: @Model.Projects.Count()</h6>
+            </div>
+        </div>
+    }
+</div>

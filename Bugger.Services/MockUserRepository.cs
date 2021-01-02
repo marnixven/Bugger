@@ -15,6 +15,22 @@ namespace Bugger.Services
             {
                 new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
                     EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 2, UserName = "Janine", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 2, UserName = "Janine", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 2, UserName = "Janine", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 2, UserName = "Janine", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
             };
 
         }

@@ -9,6 +9,5 @@ namespace Bugger.Models
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
         public DateTime Created { get; set; }
-        public string PhotoPath { get; set; }
     }
 }
