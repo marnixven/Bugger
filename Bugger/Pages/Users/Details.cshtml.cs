@@ -20,9 +20,16 @@ namespace Bugger.Pages.Users
 
         public User SingleUser { get; private set; }
 
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             SingleUser = userRepository.GetUser(id);
+
+            if(SingleUser == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+
+            return Page();
         }
     }
 }
