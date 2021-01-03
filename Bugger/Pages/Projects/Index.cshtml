@@ -9,7 +9,7 @@
     @foreach (var proj in Model.Projects)
     {
         <div class="card border-info mb-3" style="min-width: 18rem; max-width: 30.5%; margin-top: 20px;">
-            <div class="card-header text-center">@proj.ProjectName</div>
+            <div class="card-header text-center"><h5 style="font-weight: bold">@proj.ProjectName</h5></div>
             <div class="card-body">
                 <h5 class="card-title">Ticket status</h5>
                 <h6 class="text-muted">Open: @Model.Projects.Count()</h6>

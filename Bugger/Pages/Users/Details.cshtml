@@ -1,0 +1,50 @@
+﻿@page
+@model Bugger.Pages.Users.DetailsModel
+@{
+}
+
+<h1>User Details</h1>
+
+<p></p>
+
+<form>
+    <fieldset>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">ID</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.Id" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Username</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.UserName" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Name</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.FullName" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Email</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.EmailAddress" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Created</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.Created" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Last updated</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.LastUpdated" readonly="">
+            </fieldset>
+        </div>
+        <a asp-page="index" class="btn btn-primary">back</a>
+    </fieldset>
+</form>
