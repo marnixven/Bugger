@@ -9,16 +9,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Bugger.Pages.Users
 {
-    public class DetailsModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IUserRepository userRepository;
 
-        public DetailsModel(IUserRepository userRepository)
+        public EditModel(IUserRepository userRepository)
         {
             this.userRepository = userRepository;
         }
 
-        public User SingleUser { get; private set; }
+        public User SingleUser { get; set; }
 
         public IActionResult OnGet(int id)
         {

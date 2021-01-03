@@ -20,7 +20,7 @@ else
                 <th>Name</th>
                 <th>Email Address</th>
                 <th>Created</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +32,8 @@ else
                     <td>@User.EmailAddress</td>
                     <td>@User.Created.ToShortDateString()</td>
                     <td>
-                        <a asp-page="/Users/Details" asp-route-ID="@User.Id">view</a>
+                        <a asp-page="/Users/Details" asp-route-ID="@User.Id">View</a> | 
+                        <a asp-page="/Users/Edit" asp-route-ID="@User.Id">Edit</a>
                     </td>
                 </tr>
             }
