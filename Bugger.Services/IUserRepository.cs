@@ -8,5 +8,6 @@ namespace Bugger.Services
     {
         IEnumerable<User> GetAllUsers();
         User GetUser(int id);
+        User Update(User updatedUser);
     }
 }

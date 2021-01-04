@@ -42,5 +42,19 @@ namespace Bugger.Services
         {
             return _userList.FirstOrDefault(e => e.Id == id);
         }
+
+        public User Update(User updatedUser)
+        {
+            User user = _userList.FirstOrDefault(e => e.Id == updatedUser.Id);
+
+            if(user != null)
+            {
+                user.FullName = updatedUser.FullName;
+                user.UserName = updatedUser.UserName;
+                user.EmailAddress = updatedUser.EmailAddress;
+                user.Created = updatedUser.Created;
+            }
+            return user;
+        }
     }
 }

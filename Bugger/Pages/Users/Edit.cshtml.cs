@@ -31,5 +31,10 @@ namespace Bugger.Pages.Users
 
             return Page();
         }
+        public IActionResult OnPost(User SingleUser)
+        {
+            SingleUser = userRepository.Update(SingleUser);
+            return RedirectToPage("Index");
+        }
     }
 }
