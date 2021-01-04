@@ -31,7 +31,7 @@ else
                     <td>@User.EmailAddress</td>
                     <td>@User.Created.ToShortDateString()</td>
                     <td>
-                        <a asp-page="/Users/Details" asp-route-ID="@User.Id">View</a> | 
+                        <a asp-page="/Users/Details" asp-route-ID="@User.Id">View</a> |
                         <a asp-page="/Users/Edit" asp-route-ID="@User.Id">Edit</a>
                     </td>
                 </tr>
@@ -39,5 +39,5 @@ else
         </tbody>
     </table>
 
-    <h6>Number of records: @Model.Users.Count()</h6>
+    <h6 class="mt-4">Number of records: @Model.Users.Count()</h6>
 }
