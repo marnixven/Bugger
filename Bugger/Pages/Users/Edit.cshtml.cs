@@ -20,9 +20,17 @@ namespace Bugger.Pages.Users
 
         public User SingleUser { get; set; }
 
-        public IActionResult OnGet(int id)
+        public IActionResult OnGet(int? id)
+            
         {
-            SingleUser = userRepository.GetUser(id);
+            if (id.HasValue)
+            {
+                SingleUser = userRepository.GetUser(id.Value);
+            }
+            else
+            {
+                SingleUser = new User();
+            }
 
             if (SingleUser == null)
             {
@@ -33,8 +41,20 @@ namespace Bugger.Pages.Users
         }
         public IActionResult OnPost(User SingleUser)
         {
-            SingleUser = userRepository.Update(SingleUser);
-            return RedirectToPage("Index");
+            if (ModelState.IsValid)
+            {
+                if (SingleUser.Id > 0)
+                {
+                    SingleUser = userRepository.Update(SingleUser);
+                }
+                else
+                {
+                    SingleUser = userRepository.Add(SingleUser);
+                }
+                return RedirectToPage("Index");
+            }
+
+            return Page();
         }
     }
 }

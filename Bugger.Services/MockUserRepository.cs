@@ -33,6 +33,14 @@ namespace Bugger.Services
             };
 
         }
+
+        public User Add(User newUser)
+        {
+            newUser.Id = _userList.Max(e => e.Id) + 1;
+            _userList.Add(newUser);
+            return newUser;
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             return _userList;
