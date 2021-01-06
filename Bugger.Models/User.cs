@@ -13,10 +13,9 @@ namespace Bugger.Models
         [Required]
         [MinLength(3, ErrorMessage = "Your Username should contain at least 3 characters")]
         public string UserName { get; set; }
-        [Required]
-        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$",
-            ErrorMessage = "Invalid Email Format")]
-        [Display(Name ="Mijn email adres")]
+        [Required]//[Required(ErrorMessage = "Invalid Email Format")]
+        [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Invalid Email Format")]
+        [Display(Name = "Mijn email adres")]
         public string EmailAddress { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastUpdated { get; set; }
