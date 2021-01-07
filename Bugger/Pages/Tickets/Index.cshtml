@@ -4,3 +4,48 @@
 }
 
 <h1>Tickets</h1>
+
+@if (Model.Tickets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Project</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created_by</th>
+                <th>Assigned_to</th>
+                <th>Created_on</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Ticket in Model.Tickets)
+            {
+            <tr>
+                <td>@Ticket.TicketId</td>
+                <td>@Ticket.ToProject</td>
+                <td>@Ticket.TicketTitle</td>
+                <td>@Ticket.TicketDescription</td>
+                <td>@Ticket.AssignedToUserId</td>
+                <td>@Ticket.CreatedBy</td>
+                <td>@Ticket.Created.ToShortDateString()</td>
+                <td>@Ticket.Status</td>
+                @*<td>
+            <a asp-page="/Users/Details" asp-route-ID="@User.Id">View</a> |
+            <a asp-page="/Users/Edit" asp-route-ID="@User.Id">Edit</a>
+        </td>*@
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <h6 class="mt-4">Number of records: @Model.Tickets.Count()</h6>
+
+    @*<a asp-page="/Users/Edit" class="btn btn-primary mt-3">Add new user</a>*@
+}

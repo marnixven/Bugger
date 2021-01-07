@@ -28,6 +28,7 @@ namespace Bugger
             services.AddRazorPages();
             services.AddSingleton<IUserRepository, MockUserRepository>();
             services.AddSingleton<IProjectRepository, MockProjectRepository>();
+            services.AddSingleton<ITicketRepository, MockTicketRepository>();
             services.Configure<RouteOptions>(options =>
             {
                 options.LowercaseUrls = true;
