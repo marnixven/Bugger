@@ -10,5 +10,6 @@ namespace Bugger.Services
         User GetUser(int id);
         User Update(User updatedUser);
         User Add(User newUser);
+        User Delete(int id);
     }
 }

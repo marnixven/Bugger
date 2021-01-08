@@ -25,13 +25,15 @@
         <li class="nav-item">
             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
         </li>*@
-
-
                         @*<ul class="nav nav-pills">*@
+                        <li class="nav-item">
+                            <a class="nav-link"  asp-area="" asp-page="/Projects/Index">Projecs</a>
+                        </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tickets</a>
                             <div class="dropdown-menu" style="">
-                                <a class="dropdown-item"  asp-area="" asp-page="/Projects/Index">All</a>
+                                <a class="dropdown-item" asp-area="" asp-page="/Tickets/Index">All</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">House</a>
                                 <a class="dropdown-item" href="#">Car</a>
@@ -42,28 +44,10 @@
                             </div>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tickets</a>
-                            <div class="dropdown-menu" style="">
-                                <a class="dropdown-item" asp-area="" asp-page="/Tickets/Index">All</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
-
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Users/Index">Users</a>
                         </li>
 
-
-                        @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Projects/Index">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Tickets/Index">Tickets</a>
-                        </li>*@
                     </ul>
                 </div>
                 @*<form class="form-inline my-2 my-lg-0">

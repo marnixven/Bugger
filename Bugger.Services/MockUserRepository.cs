@@ -41,6 +41,18 @@ namespace Bugger.Services
             return newUser;
         }
 
+        public User Delete(int id)
+        {
+            User userToDelete = _userList.FirstOrDefault(e => e.Id == id);
+
+            if(userToDelete != null)
+            {
+                _userList.Remove(userToDelete);
+            }
+
+            return userToDelete;
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
             return _userList;
