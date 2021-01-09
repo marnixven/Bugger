@@ -3,12 +3,19 @@
 @{
 }
 
+<style>
+    .btn {
+        width: 75px;
+        margin-right: 4px;
+    }
+</style>
+
 <h1>Delete Confirmation</h1>
 
-<div class="alert alert-secondary">
+<div class="alert alert-light border-danger mt-3">
     <h5>Are you sure you want to delete user @Model.SingleUser.FullName?</h5>
     <form method="post">
-        <button type="submit" class="btn btn-danger">Yes</button>
+        <button type="submit" class="btn btn-outline-danger">Yes</button>
         <a class="btn btn-primary" asp-page="/Users/Edit" asp-route-ID="@Model.SingleUser.Id">No</a>
     </form>
 </div>

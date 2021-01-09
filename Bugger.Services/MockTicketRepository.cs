@@ -25,9 +25,9 @@ namespace Bugger.Services
                     TicketDescription = "Store data in a local SQL Server database instead of MockUserRepository, MockProjectRepository and MockTicketRepository",
                     Status = Status.Open, AssignedToUserId = 1, Created = DateTime.Now},
 
-                new Ticket() {TicketId = 1, ToProject = "Other", TicketTitle = "Remove button",
+                new Ticket() {TicketId = 4, ToProject = "Other", TicketTitle = "Remove button",
                     TicketDescription = "Remove Deletebutton from Add new user screen",
-                    Status = Status.Open, AssignedToUserId = 1, Created = DateTime.Now}
+                    Status = Status.Completed, AssignedToUserId = 1, Created = DateTime.Now}
             };
         }
 
