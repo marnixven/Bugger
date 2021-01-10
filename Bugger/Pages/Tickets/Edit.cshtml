@@ -1,7 +1,7 @@
 ﻿@page "{id:min(1)?}"
-@model Bugger.Pages.Users.EditModel
+@model Bugger.Pages.Tickets.EditModel
 @{
-    var pageHeader = Model.SingleUser.Id > 0 ? "Edit" : "Create";
+    var pageHeader = Model.SingleTicket.TicketId > 0 ? "Edit" : "Create";
 }
 
 <style>
@@ -11,14 +11,14 @@
     }
 </style>
 
-<h1>@pageHeader</h1>
+<h1>pageHeader</h1>
 
 <form method="post" class="mt-4">
-    <input hidden asp-for="SingleUser.Id" />
+    <input hidden asp-for="SingleTicket.TicketId" />
 
     @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
-    <div class="form-group row">
+    @*<div class="form-group row">
         <label asp-for="SingleUser.FullName" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
@@ -41,14 +41,14 @@
             <input asp-for="SingleUser.EmailAddress" class="form-control" placeholder="Email" />
             <span asp-validation-for="SingleUser.EmailAddress" class="text-danger"></span>
         </div>
-    </div>
-    <div class="form-group row">
+    </div>*@
+    @*<div class="form-group row">
         <div class="row-cols-sm-1">
             <button type="submit" class="btn btn-success">Save</button>
-            <a asp-page="/Users/Index" class="btn btn-outline-primary">Cancel</a>
-            @if (@Model.SingleUser.Id > 0){
-            <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleUser.Id" class="btn btn-outline-danger">Delete</a>
+            <a asp-page="/Tickets/Index" class="btn btn-outline-primary">Cancel</a>
+            @if (@Model.SingleTicket.TicketId > 0){
+            <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleTicket.TicketId" class="btn btn-outline-danger">Delete</a>
             }
         </div>
-    </div>
+    </div>*@
 </form>

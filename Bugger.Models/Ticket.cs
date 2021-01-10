@@ -8,10 +8,10 @@ namespace Bugger.Models
     public class Ticket
     {
         public int TicketId { get; set; }
-        public string ToProject { get; set; }
+        public string TicketProject { get; set; }
         [Required]
         [Display(Name = "Title")]
-        [MinLength(3, ErrorMessage = "Ticket title should contain at least 3 characters")]
+        [MinLength(2, ErrorMessage = "Ticket title should contain at least 2 characters")]
         public string TicketTitle { get; set; }
         [Required]
         [Display(Name = "Description")]
