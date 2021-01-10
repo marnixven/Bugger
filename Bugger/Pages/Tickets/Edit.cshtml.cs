@@ -20,25 +20,25 @@ namespace Bugger.Pages.Tickets
 
         public Ticket SingleTicket { get; set; }
 
-        //public IActionResult OnGet(int? id)
+        public IActionResult OnGet(int? id)
 
-        //{
-        //    if (id.HasValue)
-        //    {
-        //        SingleTicket = ticketRepository.GetTicket(id.Value);
-        //    }
-        //    else
-        //    {
-        //        SingleTicket = new Ticket();
-        //    }
+        {
+            if (id.HasValue)
+            {
+                SingleTicket = ticketRepository.GetTicket(id.Value);
+            }
+            else
+            {
+                SingleTicket = new Ticket();
+            }
 
-        //    if (SingleTicket == null)
-        //    {
-        //        return RedirectToPage("/NotFound");
-        //    }
+            if (SingleTicket == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
 
-        //    return Page();
-        //}
+            return Page();
+        }
         public IActionResult OnPost(Ticket SingleTicket)
         {
             if (ModelState.IsValid)
