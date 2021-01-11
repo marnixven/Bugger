@@ -22,7 +22,7 @@
         <label asp-for="SingleTicket.TicketProject" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.TicketProject" class="form-control" placeholder="Username" />
+            <input asp-for="SingleTicket.TicketProject" class="form-control" placeholder="Project" />
             <span asp-validation-for="SingleTicket.TicketProject" class="text-danger"></span>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <label asp-for="SingleTicket.TicketTitle" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.TicketTitle" class="form-control" placeholder="Username" />
+            <input asp-for="SingleTicket.TicketTitle" class="form-control" placeholder="Title" />
             <span asp-validation-for="SingleTicket.TicketTitle" class="text-danger"></span>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <label asp-for="SingleTicket.TicketDescription" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.TicketDescription" class="form-control" placeholder="Username" />
+            <input asp-for="SingleTicket.TicketDescription" class="form-control" placeholder="Description" />
             <span asp-validation-for="SingleTicket.TicketDescription" class="text-danger"></span>
         </div>
     </div>
@@ -46,15 +46,17 @@
         <label asp-for="SingleTicket.Status" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.Status" class="form-control" placeholder="Username" />
-            <span asp-validation-for="SingleTicket.Status" class="text-danger"></span>
+            <select asp-for="SingleTicket.Status" class="custom-select"
+                    asp-items="Html.GetEnumSelectList<Status>()">
+                @*<option value="">Please select</option>*@
+            </select>
         </div>
     </div>
     <div class="form-group row">
         <label asp-for="SingleTicket.AssignedToUserId" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.AssignedToUserId" class="form-control" placeholder="Username" />
+            <input asp-for="SingleTicket.AssignedToUserId" class="form-control" placeholder="Assigned to user" />
             <span asp-validation-for="SingleTicket.AssignedToUserId" class="text-danger"></span>
         </div>
     </div>
@@ -62,7 +64,7 @@
         <label asp-for="SingleTicket.TargetEndDate" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleTicket.TargetEndDate" class="form-control" placeholder="Username" />
+            <input asp-for="SingleTicket.TargetEndDate" class="form-control" placeholder="Target enddate" />
             <span asp-validation-for="SingleTicket.TargetEndDate" class="text-danger"></span>
         </div>
     </div>
