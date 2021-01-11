@@ -1,0 +1,19 @@
+﻿@page "{id}"
+@model Bugger.Pages.Tickets.DeleteModel
+@{
+}
+
+<style>
+    .btn {
+        width: 75px;
+        margin-right: 4px;
+    }
+</style>
+
+<div class="alert alert-light border-danger mt-5 text-center">
+    <h5>Are you sure you want to delete Ticket @Model.SingleTicket.Id?</h5>
+    <form method="post">
+        <a class="btn btn-primary" asp-page="/Tickets/Edit" asp-route-ID="@Model.SingleTicket.Id">No</a>
+        <button type="submit" class="btn btn-outline-danger">Yes</button>
+    </form>
+</div>

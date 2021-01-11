@@ -46,8 +46,9 @@
         <div class="row-cols-sm-1">
             <button type="submit" class="btn btn-success">Save</button>
             <a asp-page="/Users/Index" class="btn btn-outline-primary">Cancel</a>
-            @if (@Model.SingleUser.Id > 0){
-            <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleUser.Id" class="btn btn-outline-danger">Delete</a>
+            @if (@Model.SingleUser.Id > 0)
+            {
+                <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleUser.Id" class="btn btn-outline-danger">Delete</a>
             }
         </div>
     </div>

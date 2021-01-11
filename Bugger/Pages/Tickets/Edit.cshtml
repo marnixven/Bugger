@@ -1,7 +1,7 @@
 ﻿@page "{id:min(1)?}"
 @model Bugger.Pages.Tickets.EditModel
 @{
-    var pageHeader = Model.SingleTicket.TicketId > 0 ? "Edit" : "Create";
+    var pageHeader = Model.SingleTicket.Id > 0 ? "Edit ticket" : "Add new ticket";
 }
 
 <style>
@@ -14,41 +14,66 @@
 <h1>@pageHeader</h1>
 
 <form method="post" class="mt-4">
-    <input hidden asp-for="SingleTicket.TicketId" />
+    <input hidden asp-for="SingleTicket.Id" />
 
     @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
-    @*<div class="form-group row">
-        <label asp-for="SingleUser.FullName" class="col-sm-2 col-form-label">
+    <div class="form-group row">
+        <label asp-for="SingleTicket.TicketProject" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleUser.FullName" class="form-control" placeholder="Name" />
-            <span asp-validation-for="SingleUser.FullName" class="text-danger"></span>
+            <input asp-for="SingleTicket.TicketProject" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.TicketProject" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
-        <label asp-for="SingleUser.UserName" class="col-sm-2 col-form-label">
+        <label asp-for="SingleTicket.TicketTitle" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleUser.UserName" class="form-control" placeholder="Username" />
-            <span asp-validation-for="SingleUser.UserName" class="text-danger"></span>
+            <input asp-for="SingleTicket.TicketTitle" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.TicketTitle" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group row">
-        <label asp-for="SingleUser.EmailAddress" class="col-sm-2 col-form-label">
+        <label asp-for="SingleTicket.TicketDescription" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
-            <input asp-for="SingleUser.EmailAddress" class="form-control" placeholder="Email" />
-            <span asp-validation-for="SingleUser.EmailAddress" class="text-danger"></span>
+            <input asp-for="SingleTicket.TicketDescription" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.TicketDescription" class="text-danger"></span>
         </div>
-    </div>*@
-    @*<div class="form-group row">
+    </div>
+    <div class="form-group row">
+        <label asp-for="SingleTicket.Status" class="col-sm-2 col-form-label">
+        </label>
+        <div class="col-sm-10">
+            <input asp-for="SingleTicket.Status" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.Status" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="SingleTicket.AssignedToUserId" class="col-sm-2 col-form-label">
+        </label>
+        <div class="col-sm-10">
+            <input asp-for="SingleTicket.AssignedToUserId" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.AssignedToUserId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="SingleTicket.TargetEndDate" class="col-sm-2 col-form-label">
+        </label>
+        <div class="col-sm-10">
+            <input asp-for="SingleTicket.TargetEndDate" class="form-control" placeholder="Username" />
+            <span asp-validation-for="SingleTicket.TargetEndDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
         <div class="row-cols-sm-1">
             <button type="submit" class="btn btn-success">Save</button>
             <a asp-page="/Tickets/Index" class="btn btn-outline-primary">Cancel</a>
-            @if (@Model.SingleTicket.TicketId > 0){
-            <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleTicket.TicketId" class="btn btn-outline-danger">Delete</a>
+            @if (@Model.SingleTicket.Id > 0)
+            {
+                <a asp-page="/Tickets/Delete" asp-route-ID="@Model.SingleTicket.Id" class="btn btn-outline-danger">Delete</a>
             }
         </div>
-    </div>*@
+    </div>
 </form>

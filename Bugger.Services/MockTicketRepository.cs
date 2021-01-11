@@ -14,23 +14,23 @@ namespace Bugger.Services
         {
             _ticketList = new List<Ticket>()
             {
-                new Ticket() {TicketId = 1, TicketProject = "Other", TicketTitle = "Deletepage Userscreen",
+                new Ticket() {Id = 1, TicketProject = "Other", TicketTitle = "Deletepage Userscreen",
                     TicketDescription = "Bulding a Delete page for users",
                     Status = Status.Completed, AssignedToUserId = 1, Created = DateTime.Now},
 
-                new Ticket() {TicketId = 2, TicketProject = "Other", TicketTitle = "CRUD Pages Ticketscreen",
+                new Ticket() {Id = 2, TicketProject = "Other", TicketTitle = "CRUD Pages Ticketscreen",
                     TicketDescription = "Bulding Create, Read, Update and Delete pages for tickets",
                     Status = Status.InProgress, AssignedToUserId = 1, Created = DateTime.Now},
 
-                new Ticket() {TicketId = 3, TicketProject = "Other", TicketTitle = "SQL Server implementation",
+                new Ticket() {Id = 3, TicketProject = "Other", TicketTitle = "SQL Server implementation",
                     TicketDescription = "Store data in a local SQL Server database instead of MockUserRepository, MockProjectRepository and MockTicketRepository",
                     Status = Status.Open, AssignedToUserId = 1, Created = DateTime.Now},
 
-                new Ticket() {TicketId = 4, TicketProject = "Other", TicketTitle = "Remove button",
+                new Ticket() {Id = 4, TicketProject = "Other", TicketTitle = "Remove button",
                     TicketDescription = "Remove Deletebutton from Add new user screen",
                     Status = Status.Completed, AssignedToUserId = 1, Created = DateTime.Now},
 
-                new Ticket() {TicketId = 5, TicketProject = "Other", TicketTitle = "Prio filed",
+                new Ticket() {Id = 5, TicketProject = "Other", TicketTitle = "Prio filed",
                     TicketDescription = "Add column 'Prio' to Tickets-table",
                     Status = Status.Open, AssignedToUserId = 1, Created = DateTime.Now}
             };
@@ -38,9 +38,21 @@ namespace Bugger.Services
 
         public Ticket Add(Ticket newTicket)
         {
-            newTicket.TicketId = _ticketList.Max(e => e.TicketId) + 1;
+            newTicket.Id = _ticketList.Max(e => e.Id) + 1;
             _ticketList.Add(newTicket);
             return newTicket;
+        }
+
+        public Ticket Delete(int id)
+        {
+            Ticket ticketToDelete = _ticketList.FirstOrDefault(e => e.Id == id);
+
+            if(ticketToDelete != null)
+            {
+                _ticketList.Remove(ticketToDelete);
+            }
+
+            return ticketToDelete;
         }
 
         public IEnumerable<Ticket> GetAllTickets()
@@ -50,16 +62,15 @@ namespace Bugger.Services
 
         public Ticket GetTicket(int id)
         {
-            return _ticketList.FirstOrDefault(e => e.TicketId == id);
+            return _ticketList.FirstOrDefault(e => e.Id == id);
         }
 
         public Ticket Update(Ticket updatedTicket)
         {
-            Ticket ticket = _ticketList.FirstOrDefault(e => e.TicketId == updatedTicket.TicketId);
+            Ticket ticket = _ticketList.FirstOrDefault(e => e.Id == updatedTicket.Id);
 
             if(ticket != null)
             {
-                ticket.TicketId = updatedTicket.TicketId;
                 ticket.TicketProject = updatedTicket.TicketProject;
                 ticket.TicketTitle = updatedTicket.TicketTitle;
                 ticket.TicketDescription = updatedTicket.TicketDescription;
@@ -68,7 +79,6 @@ namespace Bugger.Services
                 ticket.Created = updatedTicket.Created;
             }
             return ticket;
-
         }
     }
 }

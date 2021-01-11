@@ -10,5 +10,6 @@ namespace Bugger.Services
         Ticket GetTicket(int id);
         Ticket Update(Ticket updatedTicket);
         Ticket Add(Ticket newTicket);
+        Ticket Delete(int id);
     }
 }

@@ -7,7 +7,8 @@ namespace Bugger.Models
 {
     public class Ticket
     {
-        public int TicketId { get; set; }
+        public int Id { get; set; }
+        [Display(Name = "Project")]
         public string TicketProject { get; set; }
         [Required]
         [Display(Name = "Title")]
@@ -15,7 +16,7 @@ namespace Bugger.Models
         public string TicketTitle { get; set; }
         [Required]
         [Display(Name = "Description")]
-        [MinLength(3, ErrorMessage = "Name should contain at least 3 characters")]
+        [MinLength(3, ErrorMessage = "Ticket description should contain at least 3 characters")]
         public string TicketDescription { get; set; }
         [Required]
         public Status? Status { get; set; }
