@@ -21,7 +21,7 @@ namespace Bugger.Models
         [Required]
         public Status? Status { get; set; }
         [Display(Name = "Assigned to")]
-        public int AssignedToUserId { get; set; }
+        public string AssignedToUser { get; set; }
         public string CreatedBy { get; set; }
         public DateTime Created { get; set; }
         public DateTime StartDate { get; set; }
