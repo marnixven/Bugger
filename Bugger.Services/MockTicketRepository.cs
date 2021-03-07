@@ -32,6 +32,10 @@ namespace Bugger.Services
 
                 new Ticket() {Id = 5, TicketProject = "Other", TicketTitle = "Prio field",
                     TicketDescription = "Add column 'Prio' to Tickets-table",
+                    Status = Status.Open, AssignedToUser = "Marnix", Created = DateTime.Now},
+
+                new Ticket() {Id = 6, TicketProject = "Other", TicketTitle = "NOT NULL validation",
+                    TicketDescription = "Add validation on add Ticket and add User screen",
                     Status = Status.Open, AssignedToUser = "Marnix", Created = DateTime.Now}
             };
         }
