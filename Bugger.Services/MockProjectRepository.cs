@@ -19,7 +19,7 @@ namespace Bugger.Services
                     LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
                 new Project() {ID = 3, ProjectName = "Work", AddDate = DateTime.Now,
                     LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
-                new Project() {ID = 4, ProjectName = "Sports", AddDate = DateTime.Now,
+                new Project() {ID = 4, ProjectName = "Bugger-project", AddDate = DateTime.Now,
                     LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
                 new Project() {ID = 5, ProjectName = "Vacation", AddDate = DateTime.Now,
                     LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},

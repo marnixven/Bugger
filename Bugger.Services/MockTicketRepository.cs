@@ -14,30 +14,30 @@ namespace Bugger.Services
         {
             _ticketList = new List<Ticket>()
             {
-                new Ticket() {ID = 1, TicketProject = "Other", TicketTitle = "Deletepage Userscreen",
+                new Ticket() {ID = 1, TicketProject = "Bugger-project", TicketTitle = "Deletepage Userscreen",
                     TicketDescription = "Bulding a Delete page for users", Status = Status.Completed,
                     AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {ID = 2, TicketProject = "Other", TicketTitle = "CRUD Pages Ticketscreen",
+                new Ticket() {ID = 2, TicketProject = "Bugger-project", TicketTitle = "CRUD Pages Ticketscreen",
                     TicketDescription = "Bulding Create, Read, Update and Delete pages for tickets", Status = Status.InProgress,
                     AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {ID = 3, TicketProject = "Other", TicketTitle = "SQL Server implementation",
+                new Ticket() {ID = 3, TicketProject = "Bugger-project", TicketTitle = "SQL Server implementation",
                     TicketDescription = "Store data in a local SQL Server database instead of MockUserRepository," +
                     "MockProjectRepository and MockTicketRepository", Status = Status.Open, AssignedToUser = "Marnix",
                     AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {ID = 4, TicketProject = "Other", TicketTitle = "Remove button",
+                new Ticket() {ID = 4, TicketProject = "Bugger-project", TicketTitle = "Remove button",
                     TicketDescription = "Remove Deletebutton from Add new user screen",
                     Status = Status.Completed, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
 
-                new Ticket() {ID = 5, TicketProject = "Other", TicketTitle = "Prio field",
+                new Ticket() {ID = 5, TicketProject = "Bugger-project", TicketTitle = "Prio field",
                     TicketDescription = "Add column 'Prio' to Tickets-table",
                     Status = Status.Open, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
 
-                new Ticket() {ID = 6, TicketProject = "Other", TicketTitle = "NOT NULL validation",
+                new Ticket() {ID = 6, TicketProject = "Bugger-project", TicketTitle = "NOT NULL validation",
                     TicketDescription = "Add validation on add Ticket and add User screen",
                     Status = Status.Open, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
