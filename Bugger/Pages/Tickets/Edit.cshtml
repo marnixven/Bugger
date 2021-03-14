@@ -1,7 +1,7 @@
 ﻿@page "{id:min(1)?}"
 @model Bugger.Pages.Tickets.EditModel
 @{
-    var pageHeader = Model.SingleTicket.Id > 0 ? "Edit ticket" : "Add new ticket";
+    var pageHeader = Model.SingleTicket.ID > 0 ? "Edit ticket" : "Add new ticket";
 }
 
 <style>
@@ -14,7 +14,7 @@
 <h1>@pageHeader</h1>
 
 <form method="post" class="mt-4">
-    <input hidden asp-for="SingleTicket.Id" />
+    <input hidden asp-for="SingleTicket.ID" />
 
     @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
@@ -72,9 +72,9 @@
         <div class="row-cols-sm-1">
             <button type="submit" class="btn btn-success">Save</button>
             <a asp-page="/Tickets/Index" class="btn btn-outline-primary">Cancel</a>
-            @if (@Model.SingleTicket.Id > 0)
+            @if (@Model.SingleTicket.ID > 0)
             {
-                <a asp-page="/Tickets/Delete" asp-route-ID="@Model.SingleTicket.Id" class="btn btn-outline-danger">Delete</a>
+                <a asp-page="/Tickets/Delete" asp-route-ID="@Model.SingleTicket.ID" class="btn btn-outline-danger">Delete</a>
             }
         </div>
     </div>

@@ -7,7 +7,7 @@ namespace Bugger.Models
 {
     public class Ticket
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Display(Name = "Project")]
         public string TicketProject { get; set; }
         [Required]
@@ -23,10 +23,16 @@ namespace Bugger.Models
         [Display(Name = "Assigned to")]
         public string AssignedToUser { get; set; }
         public string CreatedBy { get; set; }
-        public DateTime Created { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime TargetEndDate { get; set; }
         public DateTime ActualEndDate { get; set; }
-        public DateTime LastUpdated { get; set; }
+        public bool isDeleted { get; set; }
+        public DateTime DeleteDate { get; set; }
+        [Required]
+        public DateTime AddDate { get; set; }
+        [Required]
+        public int LastUpdateUserID { get; set; }
+        [Required]
+        public DateTime LastUpdateDate { get; set; }
     }
 }
