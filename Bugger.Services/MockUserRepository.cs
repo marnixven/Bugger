@@ -14,36 +14,44 @@ namespace Bugger.Services
         {
             _userList = new List<User>()
             {
-                new User() {Id = 1, UserName = "Marnix", FullName ="Marnix Ven",
-                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 2, UserName = "Janine", FullName ="Janine Driessen",
-                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 3, UserName = "Melle", FullName ="Melle Ven",
-                    EmailAddress = "melle@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 4, UserName = "Teije", FullName ="Teije Ven",
-                    EmailAddress = "teije@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 5, UserName = "Marnix", FullName ="Marnix Ven",
-                    EmailAddress = "mail@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 6, UserName = "Janine", FullName ="Janine Driessen",
-                    EmailAddress = "janine@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 7, UserName = "Melle", FullName ="Melle Ven",
-                    EmailAddress = "melle@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
-                new User() {Id = 8, UserName = "Teije", FullName ="Teije Ven",
-                    EmailAddress = "teije@marnixven.nl", Created = DateTime.Now, LastUpdated = DateTime.Now},
+                new User() {ID = 1, UserName = "Marnix", Password = "test", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", isAdmin = true, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 2, UserName = "Janine", Password = "test", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", isAdmin = false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 3, UserName = "Melle", Password = "test", FullName ="Melle Ven",
+                    EmailAddress = "melle@marnixven.nl", isAdmin = false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 4, UserName = "Teije", Password = "test", FullName ="Teije Ven",
+                    EmailAddress = "teije@marnixven.nl", isAdmin = false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 5, UserName = "Marnix", Password = "test", FullName ="Marnix Ven",
+                    EmailAddress = "mail@marnixven.nl", isAdmin = true, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 6, UserName = "Janine", Password = "test", FullName ="Janine Driessen",
+                    EmailAddress = "janine@marnixven.nl", isAdmin =false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 7, UserName = "Melle", Password = "test", FullName ="Melle Ven",
+                    EmailAddress = "melle@marnixven.nl", isAdmin = false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
+                new User() {ID = 8, UserName = "Teije", Password = "test", FullName ="Teije Ven",
+                    EmailAddress = "teije@marnixven.nl", isAdmin = false, AddDate= DateTime.Now,
+                    LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
             };
 
         }
 
         public User Add(User newUser)
         {
-            newUser.Id = _userList.Max(e => e.Id) + 1;
+            newUser.ID = _userList.Max(e => e.ID) + 1;
             _userList.Add(newUser);
             return newUser;
         }
 
         public User Delete(int id)
         {
-            User userToDelete = _userList.FirstOrDefault(e => e.Id == id);
+            User userToDelete = _userList.FirstOrDefault(e => e.ID == id);
 
             if(userToDelete != null)
             {
@@ -60,19 +68,21 @@ namespace Bugger.Services
 
         public User GetUser(int id)
         {
-            return _userList.FirstOrDefault(e => e.Id == id);
+            return _userList.FirstOrDefault(e => e.ID == id);
         }
 
         public User Update(User updatedUser)
         {
-            User user = _userList.FirstOrDefault(e => e.Id == updatedUser.Id);
+            User user = _userList.FirstOrDefault(e => e.ID == updatedUser.ID);
 
             if(user != null)
             {
                 user.FullName = updatedUser.FullName;
                 user.UserName = updatedUser.UserName;
+                user.Password = updatedUser.Password;
                 user.EmailAddress = updatedUser.EmailAddress;
-                user.Created = updatedUser.Created;
+                user.isAdmin = updatedUser.isAdmin;
+
             }
             return user;
         }

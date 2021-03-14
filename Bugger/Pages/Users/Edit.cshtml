@@ -1,7 +1,7 @@
 ﻿@page "{id:min(1)?}"
 @model Bugger.Pages.Users.EditModel
 @{
-    var pageHeader = Model.SingleUser.Id > 0 ? "Edit" : "Create";
+    var pageHeader = Model.SingleUser.ID > 0 ? "Edit" : "Create";
 }
 
 <style>
@@ -14,7 +14,7 @@
 <h1>@pageHeader</h1>
 
 <form method="post" class="mt-4">
-    <input hidden asp-for="SingleUser.Id" />
+    <input hidden asp-for="SingleUser.ID" />
 
     @*<div asp-validation-summary="All" class="text-danger"></div>*@
 
@@ -35,6 +35,14 @@
         </div>
     </div>
     <div class="form-group row">
+        <label asp-for="SingleUser.Password" class="col-sm-2 col-form-label">
+        </label>
+        <div class="col-sm-10">
+            <input asp-for="SingleUser.Password" class="form-control" placeholder="Password" />
+            <span asp-validation-for="SingleUser.Password" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
         <label asp-for="SingleUser.EmailAddress" class="col-sm-2 col-form-label">
         </label>
         <div class="col-sm-10">
@@ -42,14 +50,22 @@
             <span asp-validation-for="SingleUser.EmailAddress" class="text-danger"></span>
         </div>
     </div>
-    <div class="form-group row">
-        <div class="row-cols-sm-1">
-            <button type="submit" class="btn btn-success">Save</button>
-            <a asp-page="/Users/Index" class="btn btn-outline-primary">Cancel</a>
-            @if (@Model.SingleUser.Id > 0)
-            {
-                <a asp-page="/Users/Delete" asp-route-ID ="@Model.SingleUser.Id" class="btn btn-outline-danger">Delete</a>
-            }
+        <div class="form-group row">
+            <label asp-for="SingleUser.isAdmin" class="col-sm-2 col-form-label">
+            </label>
+            <div class="col-sm-10">
+                <input asp-for="SingleUser.isAdmin" class="form-control" placeholder="Administrator" />
+                <span asp-validation-for="SingleUser.isAdmin" class="text-danger"></span>
+            </div>
         </div>
-    </div>
+        <div class="form-group row">
+            <div class="row-cols-sm-1">
+                <button type="submit" class="btn btn-success">Save</button>
+                <a asp-page="/Users/Index" class="btn btn-outline-primary">Cancel</a>
+                @if (@Model.SingleUser.ID > 0)
+                {
+                    <a asp-page="/Users/Delete" asp-route-ID="@Model.SingleUser.ID" class="btn btn-outline-danger">Delete</a>
+                }
+            </div>
+        </div>
 </form>

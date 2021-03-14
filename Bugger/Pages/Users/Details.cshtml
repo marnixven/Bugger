@@ -10,13 +10,19 @@
         <div class="form-group">
             <fieldset>
                 <label class="control-label" for="readOnlyInput">ID</label>
-                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.Id" readonly="">
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.ID" readonly="">
             </fieldset>
         </div>
         <div class="form-group">
             <fieldset>
                 <label class="control-label" for="readOnlyInput">Username</label>
                 <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.UserName" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">Password</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.Password" readonly="">
             </fieldset>
         </div>
         <div class="form-group">
@@ -33,14 +39,38 @@
         </div>
         <div class="form-group">
             <fieldset>
-                <label class="control-label" for="readOnlyInput">Created</label>
-                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.Created" readonly="">
+                <label class="control-label" for="readOnlyInput">Administrator</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.isAdmin" readonly="">
             </fieldset>
         </div>
         <div class="form-group">
             <fieldset>
-                <label class="control-label" for="readOnlyInput">Last updated</label>
-                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.LastUpdated" readonly="">
+                <label class="control-label" for="readOnlyInput">Deleted</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.isDeleted" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">DeleteDate</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.DeleteDate" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">AddDate</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.AddDate" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">LastUpdateUserID</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.LastUpdateUserID" readonly="">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label class="control-label" for="readOnlyInput">LastUpdateDate</label>
+                <input class="form-control" id="readOnlyInput" type="text" placeholder="@Model.SingleUser.LastUpdateDate" readonly="">
             </fieldset>
         </div>
         <a asp-page="index" class="btn btn-primary">Back</a>
