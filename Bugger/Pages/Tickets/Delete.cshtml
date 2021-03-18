@@ -11,9 +11,9 @@
 </style>
 
 <div class="alert alert-light border-danger mt-5 text-center">
-    <h5>Are you sure you want to delete Ticket @Model.SingleTicket.ID?</h5>
+    <h5>Are you sure you want to delete Ticket @Model.SingleTicket.TicketId?</h5>
     <form method="post">
-        <a class="btn btn-primary" asp-page="/Tickets/Edit" asp-route-ID="@Model.SingleTicket.ID">No</a>
+        <a class="btn btn-primary" asp-page="/Tickets/Edit" asp-route-ID="@Model.SingleTicket.TicketId">No</a>
         <button type="submit" class="btn btn-outline-danger">Yes</button>
     </form>
 </div>

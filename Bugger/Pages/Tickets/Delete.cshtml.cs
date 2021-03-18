@@ -36,7 +36,7 @@ namespace Bugger.Pages.Tickets
 
         public IActionResult OnPost()
         {
-            Ticket deletedTicket = ticketRepository.Delete(SingleTicket.ID);
+            Ticket deletedTicket = ticketRepository.Delete(SingleTicket.TicketId);
 
             if (deletedTicket == null)
             {

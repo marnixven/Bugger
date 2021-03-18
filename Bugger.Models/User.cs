@@ -7,7 +7,7 @@ namespace Bugger.Models
 {
     public class User
     {
-        public int ID { get; set; }
+        public int UserId { get; set; }
         [Required]
         [MinLength(2, ErrorMessage = "Name should contain at least 2 characters")]
         [Display(Name = "Name")]

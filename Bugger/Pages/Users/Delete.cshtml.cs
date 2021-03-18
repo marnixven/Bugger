@@ -36,7 +36,7 @@ namespace Bugger.Pages.Users
 
         public IActionResult OnPost()
         {
-            User deletedUser = userRepository.Delete(SingleUser.ID);
+            User deletedUser = userRepository.Delete(SingleUser.UserId);
 
             if (deletedUser == null)
             {

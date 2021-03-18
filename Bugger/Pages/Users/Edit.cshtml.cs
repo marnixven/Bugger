@@ -43,7 +43,7 @@ namespace Bugger.Pages.Users
         {
             if (ModelState.IsValid)
             {
-                if (SingleUser.ID > 0)
+                if (SingleUser.UserId > 0)
                 {
                     SingleUser = userRepository.Update(SingleUser);
                 }

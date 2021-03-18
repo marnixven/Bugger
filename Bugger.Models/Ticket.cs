@@ -7,7 +7,7 @@ namespace Bugger.Models
 {
     public class Ticket
     {
-        public int ID { get; set; }
+        public int TicketId { get; set; }
         [Display(Name = "Project")]
         public string TicketProject { get; set; }
         [Required]
