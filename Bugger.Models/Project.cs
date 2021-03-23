@@ -7,7 +7,7 @@ namespace Bugger.Models
 {
     public class Project
     {
-        public int ProjectId { get; set; }
+        public int ID { get; set; }
         public string ProjectName { get; set; }
         public bool isDeleted { get; set; }
         public DateTime DeleteDate { get; set; }

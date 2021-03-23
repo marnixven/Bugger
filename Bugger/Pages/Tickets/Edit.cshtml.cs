@@ -43,7 +43,7 @@ namespace Bugger.Pages.Tickets
         {
             if (ModelState.IsValid)
             {
-                if (SingleTicket.TicketId > 0)
+                if (SingleTicket.ID > 0)
                 {
                     SingleTicket = ticketRepository.Update(SingleTicket);
                 }

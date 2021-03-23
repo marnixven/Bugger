@@ -33,7 +33,7 @@ namespace Bugger.Services
         }
 
         public IEnumerable<Ticket> GetAllTickets()
-        {
+        { 
             return context.Tickets;
         }
 

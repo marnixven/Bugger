@@ -14,30 +14,30 @@ namespace Bugger.Services
         {
             _ticketList = new List<Ticket>()
             {
-                new Ticket() {TicketId = 1, TicketProject = "Bugger-project", TicketTitle = "Deletepage Userscreen",
+                new Ticket() {ID = 1, TicketProject = "Bugger-project", TicketTitle = "Deletepage Userscreen",
                     TicketDescription = "Bulding a Delete page for users", Status = Status.Completed,
                     AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {TicketId = 2, TicketProject = "Bugger-project", TicketTitle = "CRUD Pages Ticketscreen",
+                new Ticket() {ID = 2, TicketProject = "Bugger-project", TicketTitle = "CRUD Pages Ticketscreen",
                     TicketDescription = "Bulding Create, Read, Update and Delete pages for tickets", Status = Status.InProgress,
                     AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {TicketId = 3, TicketProject = "Bugger-project", TicketTitle = "SQL Server implementation",
+                new Ticket() {ID = 3, TicketProject = "Bugger-project", TicketTitle = "SQL Server implementation",
                     TicketDescription = "Store data in a local SQL Server database instead of MockUserRepository," +
                     "MockProjectRepository and MockTicketRepository", Status = Status.Open, AssignedToUser = "Marnix",
                     AddDate = DateTime.Now, LastUpdateUserID = 1, LastUpdateDate = DateTime.Now},
 
-                new Ticket() {TicketId = 4, TicketProject = "Bugger-project", TicketTitle = "Remove button",
+                new Ticket() {ID = 4, TicketProject = "Bugger-project", TicketTitle = "Remove button",
                     TicketDescription = "Remove Deletebutton from Add new user screen",
                     Status = Status.Completed, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
 
-                new Ticket() {TicketId = 5, TicketProject = "Bugger-project", TicketTitle = "Prio field",
+                new Ticket() {ID = 5, TicketProject = "Bugger-project", TicketTitle = "Prio field",
                     TicketDescription = "Add column 'Prio' to Tickets-table",
                     Status = Status.Open, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
 
-                new Ticket() {TicketId = 6, TicketProject = "Bugger-project", TicketTitle = "NOT NULL validation",
+                new Ticket() {ID = 6, TicketProject = "Bugger-project", TicketTitle = "NOT NULL validation",
                     TicketDescription = "Add validation on add Ticket and add User screen",
                     Status = Status.Open, AssignedToUser = "Marnix", AddDate = DateTime.Now, LastUpdateUserID = 1,
                     LastUpdateDate = DateTime.Now},
@@ -46,14 +46,14 @@ namespace Bugger.Services
 
         public Ticket Add(Ticket newTicket)
         {
-            newTicket.TicketId = _ticketList.Max(e => e.TicketId) + 1;
+            newTicket.ID = _ticketList.Max(e => e.ID) + 1;
             _ticketList.Add(newTicket);
             return newTicket;
         }
 
         public Ticket Delete(int id)
         {
-            Ticket ticketToDelete = _ticketList.FirstOrDefault(e => e.TicketId == id);
+            Ticket ticketToDelete = _ticketList.FirstOrDefault(e => e.ID == id);
 
             if(ticketToDelete != null)
             {
@@ -70,12 +70,12 @@ namespace Bugger.Services
 
         public Ticket GetTicket(int id)
         {
-            return _ticketList.FirstOrDefault(e => e.TicketId == id);
+            return _ticketList.FirstOrDefault(e => e.ID == id);
         }
 
         public Ticket Update(Ticket updatedTicket)
         {
-            Ticket ticket = _ticketList.FirstOrDefault(e => e.TicketId == updatedTicket.TicketId);
+            Ticket ticket = _ticketList.FirstOrDefault(e => e.ID == updatedTicket.ID);
 
             if(ticket != null)
             {
